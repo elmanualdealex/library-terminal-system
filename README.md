@@ -43,6 +43,10 @@ This project was built to practice Java fundamentals, object-oriented design, an
 ⸻
 
 👨‍💻 Author
+<<<<<<< HEAD
 Alex
 
 ---
+=======
+@elmanualdealex
+>>>>>>> 9a8b4a8 (feat: add Book and Library models)
