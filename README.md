@@ -40,18 +40,7 @@ java -jar target/library-management-system.jar
 
 This project was built to practice Java fundamentals, object-oriented design, and clean code structure.
 
-⸻
-
-<<<<<<< HEAD
-👨‍💻 Author
-<<<<<<< HEAD
-Alex
-
 ---
-=======
-@elmanualdealex
->>>>>>> 9a8b4a8 (feat: add Book and Library models)
-=======
+
 ## 👨‍💻 Author
 `@elmanualdealex`
->>>>>>> 18f6860 (docs(readme): update author handle to @elmanualdealex)
