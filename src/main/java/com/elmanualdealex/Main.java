@@ -16,7 +16,7 @@ public class Main {
 
             String inputText = input.nextLine();
             int option;
-            
+
             try {
                 option = Integer.parseInt(inputText);
             } catch (NumberFormatException e) {
