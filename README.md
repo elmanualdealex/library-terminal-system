@@ -42,6 +42,7 @@ This project was built to practice Java fundamentals, object-oriented design, an
 
 ⸻
 
+<<<<<<< HEAD
 👨‍💻 Author
 <<<<<<< HEAD
 Alex
@@ -50,3 +51,7 @@ Alex
 =======
 @elmanualdealex
 >>>>>>> 9a8b4a8 (feat: add Book and Library models)
+=======
+## 👨‍💻 Author
+`@elmanualdealex`
+>>>>>>> 18f6860 (docs(readme): update author handle to @elmanualdealex)
