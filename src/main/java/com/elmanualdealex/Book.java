@@ -1,9 +1,9 @@
 package com.elmanualdealex;
 
 public class Book {
+    int id;
     String title;
     String author;
-    int id;
 
     public Book(int id, String title, String author) {
         this.id = id;
