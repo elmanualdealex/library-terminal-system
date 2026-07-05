@@ -1,20 +1,37 @@
 package com.elmanualdealex;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        int x = 10;
-        int y = 10;
-        double e = 2.72818;
+        Scanner input = new Scanner(System.in);
+        Library library = new Library();
 
-        double resultado = x + y + e;
+        while (true) {
+            System.out.println("\n1. Add book");
+            System.out.println("2. Watch books");
+            System.out.println("3. Quit");
 
-        System.out.println("La suma es:");
-        System.out.printf("%.2f%n", resultado);
+            int option = input.nextInt();
+            input.nextLine();
 
-        if (resultado >= 50) {
-            System.out.println("Es igual o mayor a 50");
-        } else {
-            System.out.println("Es menor a 50");
+            if (option == 1) {
+                System.out.print("ID: ");
+                int id = input.nextInt();
+                input.nextLine();
+
+                System.out.print("Title: ");
+                String title = input.nextLine();
+
+                System.out.print("Author: ");
+                String author = input.nextLine();
+
+                library.addBook(new Book(id, title, author));
+            } else if (option == 2) {
+                library.showBooks();
+            } else {
+                break;
+            }
         }
     }
 }
