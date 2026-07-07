@@ -5,33 +5,35 @@
 ![Maven](https://img.shields.io/badge/Maven-Build-red?logo=apachemaven)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A command-line **Library Management System** developed in **Java** with **PostgreSQL** using **JDBC**.
+A command-line **Library Management System** built in **Java** with **PostgreSQL**, connected via **JDBC**.
 
-This project was created to practice backend development fundamentals, including SQL, CRUD operations, JDBC, clean code organization, and Git workflows before moving to Spring Boot.
+Built to practice backend fundamentals — SQL, CRUD, JDBC, clean code structure, and Git — before moving on to Spring Boot.
 
 ---
 
 ## ✨ Features
 
-- 📖 Create books
-- 📚 List all books
-- ✏️ Update existing books
-- 🗑 Delete books
-- 🗄 Persistent storage with PostgreSQL
-- ✅ Input validation
-- 💻 Interactive terminal menu
+| Feature | Description |
+|---|---|
+| 📖 Create | Add a new book |
+| 📚 List | Show all books |
+| ✏️ Update | Edit an existing book |
+| 🗑 Delete | Remove a book |
+| ✅ Validation | Basic input checks |
+| 💻 CLI menu | Interactive terminal interface |
+| 🗄 Storage | Persistent, backed by PostgreSQL |
 
 ---
 
 ## 🛠 Tech Stack
 
-| Technology | Version |
-|------------|---------|
-| Java | 21 |
-| PostgreSQL | 16 |
-| JDBC | PostgreSQL Driver |
-| Maven | Latest |
-| IntelliJ IDEA | IDE |
+| Technology | Version | Role |
+|---|---|---|
+| Java | 21 | Language / runtime |
+| PostgreSQL | 16 | Database |
+| JDBC | PostgreSQL Driver | DB connectivity |
+| Maven | Latest | Build tool |
+| IntelliJ IDEA | — | IDE (optional) |
 
 ---
 
@@ -42,15 +44,17 @@ src
 └── main
     └── java
         └── com.elmanualdealex
-            ├── Main.java
-            ├── Book.java
-            ├── BookRepository.java
-            └── DB.java
+            ├── Main.java             # Entry point, CLI menu loop
+            ├── Book.java             # Book model
+            ├── BookRepository.java   # CRUD logic (DB access layer)
+            └── DB.java               # Connection config
 ```
+
+**Pattern:** `Main` → `BookRepository` → `DB` → PostgreSQL. Each class has one job — no logic bleeding between layers.
 
 ---
 
-## 🗄 Database
+## 🗄 Database Setup
 
 ```sql
 CREATE DATABASE library;
@@ -62,11 +66,13 @@ CREATE TABLE books (
 );
 ```
 
+Run this once in `psql` (or your DB client of choice) before starting the app.
+
 ---
 
 ## ⚙️ Configuration
 
-Edit `DB.java`
+Set your credentials in `DB.java`:
 
 ```java
 private static final String URL = "jdbc:postgresql://localhost:5432/library";
@@ -74,40 +80,35 @@ private static final String USER = "your_username";
 private static final String PASSWORD = "your_password";
 ```
 
+> ⚠️ These are hardcoded for simplicity in this learning project. In production, move them to environment variables or a config file excluded from Git.
+
 ---
 
 ## 🚀 Getting Started
 
-Clone the repository
-
 ```bash
+# 1. Clone
 git clone git@github.com:elmanualdealex/library-terminal-system.git
-```
-
-Go to the project
-
-```bash
 cd library-terminal-system
-```
 
-Run
-
-```bash
+# 2. Build
 mvn compile
+
+# 3. Run
 mvn exec:java
 ```
 
-or simply run `Main.java` from IntelliJ IDEA.
+Alternatively, run `Main.java` directly from IntelliJ IDEA.
+
+**Prerequisites:** Java 21, PostgreSQL 16 running locally, Maven installed.
 
 ---
 
 ## 📸 Preview
 
-### Main Menu
-
+**Main menu:**
 ```text
 📚 LIBRARY SYSTEM
-
 1. Add book
 2. Show books
 3. Delete book
@@ -115,51 +116,51 @@ or simply run `Main.java` from IntelliJ IDEA.
 5. Exit
 ```
 
-### Example
-
+**Example run:**
 ```text
 1. Add book
-
 ID: 1
 Title: Clean Code
 Author: Robert C. Martin
-
 Book added successfully
 ```
 
-### Database
+**Resulting row:**
 
 | id | title | author |
-|---:|-------|--------|
+|---:|---|---|
 | 1 | Clean Code | Robert C. Martin |
 
 ---
 
 ## 📖 What I Learned
 
-- Java OOP
-- JDBC
-- SQL CRUD
-- PostgreSQL
+- Java OOP fundamentals
+- JDBC (raw DB connectivity, no ORM)
+- SQL CRUD operations
+- PostgreSQL setup and management
 - Exception handling
-- Git & GitHub
-- Maven
-- Repository pattern
+- Repository pattern (separating DB logic from business logic)
 - CLI application design
+- Git & GitHub workflows
+- Maven build lifecycle
 
 ---
 
 ## 🛣 Roadmap
 
-- [x] CRUD
+**Done:**
+- [x] CRUD operations
 - [x] PostgreSQL integration
-- [x] JDBC
+- [x] JDBC connectivity
 - [x] Input validation
+
+**Next:**
 - [ ] Search books
 - [ ] Pagination
 - [ ] Unit testing (JUnit)
 - [ ] Logging
-- [ ] Spring Boot migration
+- [ ] Migrate to Spring Boot
 - [ ] REST API
 - [ ] Docker support
 
@@ -168,5 +169,8 @@ Book added successfully
 ## 👨‍💻 Author
 
 **Alex**
+GitHub: [github.com/elmanualdealex](https://github.com/elmanualdealex)
 
-GitHub: https://github.com/elmanualdealex
+## License
+
+MIT
